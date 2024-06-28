@@ -1,0 +1,14 @@
+# dbus-watcher systemd service
+# put this file into ~/.config/systemd/user/ and run:
+# loginctl enable-linger username
+# systemctl --user enable dbus-watcher.service
+# systemctl --user start dbus-watcher.service
+
+[Unit]
+Description=DBus Watcher
+
+[Service]
+ExecStart=%h/bin/dbus-watcher.py
+
+[Install]
+WantedBy=default.target
